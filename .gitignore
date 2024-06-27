@@ -1,2 +1,3 @@
-/config/config_local.php
-/importedfiles/*
+config/config_local.php
+importedfiles/*
+!importedfiles/
