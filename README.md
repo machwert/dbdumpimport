@@ -22,6 +22,7 @@ Installation
 
 Filesystem
 ----------
+```bash
 /config
     config.php
     config_local.php [optional, in .gitignore]
@@ -29,7 +30,8 @@ Filesystem
 /controllers
     ConfigController.php
     ImportController.php
-/importedfiles [in .gitignore]
+/importedfiles [content of folder .gitignore]
+    .keep [to enable empty folder]
     dbdump.sql [example file]
 /models
     Database.php
@@ -39,6 +41,7 @@ Filesystem
     index.php
 index.php
 README.md
+```
 
 
 Last Update
