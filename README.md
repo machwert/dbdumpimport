@@ -18,7 +18,7 @@ Installation
 * Download files in WEBROOT/dbdumpimport/
 * Update .htaccess if don't use WEBROOT/dbdumpimport as the location of this web application
 * Update config.php (or better generate config_local.php) and set file path and database configuration
-
+* You should create an own .htpasswd file. For the given .htpasswd file the user 'apuser' with password 'show!ME-323' is defined.
 
 Filesystem
 ----------

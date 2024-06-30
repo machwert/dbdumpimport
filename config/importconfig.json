@@ -5,248 +5,207 @@
             "fields": {
                 "uid": {
                     "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "import": false,
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "pid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": "32"
                 },
                 "tstamp": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "crdate": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "cruser_id": {
                     "exists": false,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "import": false,
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "deleted": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "hidden": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "starttime": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "endtime": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "sorting": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "description": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "sys_language_uid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "l10n_parent": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "sys_category",
+                    "staticvalue": ""
                 },
                 "l10n_state": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3_origuid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "l10n_diffsource": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_oid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_wsid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_state": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_stage": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "title": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "items": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "parent": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "sys_category",
+                    "staticvalue": ""
                 },
                 "fe_group": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "images": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "single_pid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "shortcut": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "import_id": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "import_source": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "seo_title": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "seo_description": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "seo_headline": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "seo_text": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "slug": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                }
-            }
-        },
-        "sys_category_record_mm": {
-            "exists": true,
-            "fields": {
-                "uid_local": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                },
-                "uid_foreign": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                },
-                "sorting": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                },
-                "sorting_foreign": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                },
-                "tablenames": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
-                },
-                "fieldname": {
-                    "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 }
             }
         },
@@ -256,182 +215,223 @@
                 "uid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "pid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": "33"
                 },
                 "tstamp": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "crdate": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "cruser_id": {
                     "exists": true,
-                    "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "import": false,
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "deleted": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "hidden": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "starttime": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "endtime": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "sorting": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "sys_language_uid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "l10n_parent": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "tx_tccdexamples_domain_model_tccd",
+                    "staticvalue": ""
                 },
                 "l10n_state": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "l10n_diffsource": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_oid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_wsid": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_state": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "t3ver_stage": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "title": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "description": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "version": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "slug": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "categories": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "syllabusdescription": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "link": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "edited": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "images": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "makenewtranslation": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
                 },
                 "related_tccds": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "tx_tccdexamples_domain_model_tccd",
+                    "staticvalue": ""
                 },
                 "links": {
                     "exists": true,
                     "import": true,
-                    "relation": null,
-                    "staticvalue": null
+                    "relation": "",
+                    "staticvalue": ""
+                }
+            }
+        },
+        "sys_category_record_mm": {
+            "exists": true,
+            "fields": {
+                "uid_local": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "sys_category",
+                    "staticvalue": ""
+                },
+                "uid_foreign": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "tx_tccdexamples_domain_model_tccd",
+                    "staticvalue": ""
+                },
+                "sorting": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "",
+                    "staticvalue": ""
+                },
+                "sorting_foreign": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "",
+                    "staticvalue": ""
+                },
+                "tablenames": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "",
+                    "staticvalue": ""
+                },
+                "fieldname": {
+                    "exists": true,
+                    "import": true,
+                    "relation": "",
+                    "staticvalue": ""
                 }
             }
         }
