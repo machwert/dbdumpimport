@@ -1,7 +1,7 @@
-AuthType Basic
-AuthName "Passwortgeschützter Bereich"
-AuthUserFile /Applications/MAMP/htdocs/typo3_v12/cms/dbdumpimport/.htpasswd
-Require valid-user
+#AuthType Basic
+#AuthName "Passwortgeschützter Bereich"
+#AuthUserFile /MAMP/htdocs/ddev/machwert/cms/public/dbdumpimport/.htpasswd
+#Require valid-user
 
 RewriteEngine On
 RewriteBase /dbdumpimport/

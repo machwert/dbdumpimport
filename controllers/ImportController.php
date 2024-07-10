@@ -88,7 +88,6 @@ class ImportController
         }
 
         echo "<p>All tables and datasets were successfully imported.</p>";
-
         echo '<p></p><a class="btn" href="' . $this->config['base_url'] . '">&laquo; Back</a></p>';
 
     }
@@ -181,12 +180,14 @@ class ImportController
     private function parseSqlFile($filePath)
     {
         $sqlContent = file_get_contents($filePath);
+
         $tableContent = [];
-        $pattern = '/INSERT INTO `(\w+)` \([^)]+\) VALUES\s+((?:(?:\'(?:\\\\.|[^\'])*\'|"(?:\\\\.|[^"])*"|[^\'"])*?));/s';
+        //$pattern = '/INSERT INTO `(\w+)` \([^)]+\) VALUES\s+((?:(?:\'(?:\\\\.|[^\'])*\'|"(?:\\\\.|[^"])*"|[^\'"])*?));/s';
+        $pattern = '/INSERT INTO `(\w+)` \(([^)]+)\) VALUES\s*\((.*?)(?<!\\\)\'\s*\);/s';
+
         preg_match_all($pattern, $sqlContent, $matches);
 
         foreach ($matches[1] as $index => $tableName) {
-
             // fields
             $fieldsPattern = '/INSERT INTO `' . $tableName . '`? \((.*?)\) VALUES/is';
             preg_match_all($fieldsPattern, $matches[0][$index], $fieldsMatches);
@@ -200,18 +201,23 @@ class ImportController
             }
 
             // values
-            $values = $matches[2][$index];
-            $valuePattern = '/\(([^\'()]*+(?:\'(?:\\\\.|[^\'])*\'[^\'()]*)*)\)/';
-            preg_match_all($valuePattern, $values, $valueMatches);
-            foreach ($valueMatches[1] as $i => $valueSet) {
-                $tableContent[$tableName]['fieldvalue'][] = $this->explode_ignore_quotes(',', $valueSet);
+            $values = $matches[3][$index];
+            $values = "(".$values."');";
+
+            $valueMatches = $this->splitByOuterParentheses($values);
+
+            foreach ($valueMatches as $i => $valueSet) {
+                $valueSet = substr($valueSet, 1, -1);
+
+                $tableValue = $this->explode_ignore_quotes(',', $valueSet);
+                $tableValue = str_replace("_-#-_", "\\'", $tableValue);
+                $tableContent[$tableName]['fieldvalue'][] = $tableValue;
             }
         }
 
         foreach ($tableContent as $tableName => $tableData) {
             foreach ($tableData['fieldvalue'] as $datasetNr => $dataset) {
                 foreach ($dataset as $fieldNr => $fieldValue) {
-                    //$fieldName = str_replace("`", "", $tableContent[$tableName]['fieldname'][$fieldNr]);
                     $fieldName = $tableContent[$tableName]['fieldname'][$fieldNr];
                     $tableContent[$tableName]['fieldnamevalue'][$datasetNr][$fieldName] = $tableContent[$tableName]['fieldvalue'][$datasetNr][$fieldNr];
                 }
@@ -260,20 +266,6 @@ class ImportController
             $staticvalueTableFields = $staticvalueFields[$tableName];
         }
 
-        /*
-        if (isset($excludedTableFields)) {
-            foreach ($excludedTableFields as $key => $val) {
-                $valueToFind = '`' . $val . '`';
-                $excludedKey = array_search($valueToFind, $tableData['fieldname']);
-                $excludedKeys[] = $excludedKey;
-
-                if ($val === 'uid') {
-                    $excludedUidKey = $excludedKey;
-                }
-            }
-        }
-        */
-
         if (isset($relationTableFields)) {
             foreach ($relationTableFields as $key => $val) {
                 $valueToFind = $key;
@@ -312,19 +304,9 @@ class ImportController
 
             if (isset($relationTableFields) && count($relationTableFields) > 0) {
                 foreach ($relationTableFields as $relationTableKey => $relationTableName) {
-
-                    /*
-                    echo("Tablename: ".$tableName.'<br>');
-                    echo("Relation TableName: ".$relationTableName.'<br>');
-                    echo("Key:".$key.'<br>');
-                    echo("Fieldvalue: ".$tableData['fieldvalue'][$key][$relationKey].'<br>');
-                    echo("New Fieldvalue: ".$newIds[$relationTableName][$tableData['fieldvalue'][$key][$relationKey]].'<br><br>');
-                    */
-
                     if (isset($tableData['fieldnamevalue'][$key][$relationTableKey]) && isset($newIds[$relationTableName][$tableData['fieldnamevalue'][$key][$relationTableKey]])) {
                         $tableData['fieldnamevalue'][$key][$relationTableKey] = $newIds[$relationTableName][$tableData['fieldnamevalue'][$key][$relationTableKey]];
                     }
-
                 }
             }
             if (isset($relationFieldsToUpdateAfterwards)) {
@@ -349,6 +331,7 @@ class ImportController
                 $this->db->query($insertSql);
             } catch (Exception $e) {
                 echo "Ein Fehler ist aufgetreten: " . $e->getMessage();
+                echo "<br><br>SQL: ".$insertSql.'<br><br>';
             }
             if (isset($oldPrimaryValue[$key])) {
                 $newIds[$tableName][$oldPrimaryValue[$key]] = $this->db->insert_id;
@@ -395,26 +378,6 @@ class ImportController
                 }
             }
         }
-
-        // after
-
-        /*
-        foreach ($relationFieldsToUpdateAfterwards as $key => $relationFieldToUpdate) {
-            foreach($newIds[$tableName] as $oldId => $newId) {
-                $updateSql = sprintf(
-                    "UPDATE `%s` SET (%s) = (%s) WHERE uid = (%s);",
-                    $tableName,
-                    $relationFieldToUpdate,
-                    $newId,
-                    $newId
-                );
-
-                echo(chr(10).$updateSql.chr(10));
-            }
-
-        }
-        */
-
     }
 
     private function getFieldByIndex($table, $index)
@@ -438,5 +401,47 @@ class ImportController
             }
         }
         return null;
+    }
+
+    private function splitByOuterParentheses($input) {
+        $result = [];
+        $current = '';
+        $parenthesesLevel = 0;
+        $inSingleQuote = false;
+        $input = str_replace("\\'", "_-#-_", $input);
+        $inputLength = strlen($input);
+
+        for ($i = 0; $i < $inputLength; $i++) {
+            $char = $input[$i];
+
+            if ($char === '(' && !$inSingleQuote) {
+                $parenthesesLevel++;
+                if ($parenthesesLevel > 0) {
+                    $current .= $char;
+                }
+            } elseif ($char === ')' && !$inSingleQuote) {
+                $parenthesesLevel--;
+                if ($parenthesesLevel >= 0) {
+                    $current .= $char;
+                }
+                if ($parenthesesLevel == 0) {
+                    if (!empty(trim($current))) {
+                        $result[] =trim($current);
+                    }
+                    $current = '';
+                }
+            } elseif ($char == '\'') {
+                $current .= $char;
+                $inSingleQuote = !$inSingleQuote;
+            } elseif ($parenthesesLevel >= 1) {
+                $current .= $char;
+            }
+        }
+
+        if (!empty(trim($current))) {
+            $result[] = trim($current);
+        }
+
+        return $result;
     }
 }

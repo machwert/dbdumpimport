@@ -13,7 +13,7 @@
                     "exists": true,
                     "import": true,
                     "relation": "",
-                    "staticvalue": "32"
+                    "staticvalue": "36"
                 },
                 "tstamp": {
                     "exists": true,
@@ -222,7 +222,7 @@
                     "exists": true,
                     "import": true,
                     "relation": "",
-                    "staticvalue": "33"
+                    "staticvalue": "37"
                 },
                 "tstamp": {
                     "exists": true,
@@ -237,7 +237,7 @@
                     "staticvalue": ""
                 },
                 "cruser_id": {
-                    "exists": true,
+                    "exists": false,
                     "import": false,
                     "relation": "",
                     "staticvalue": ""
